@@ -50,7 +50,16 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     }
     
     func didLongPressMap(sender: UILongPressGestureRecognizer) {
-        println("Long Press!")
+        if sender.state == UIGestureRecognizerState.Began {
+            let touchPoint = sender.locationInView(self.mapView)
+            let touchCoordinate = self.mapView.convertPoint(touchPoint, toCoordinateFromView: self.mapView)
+            
+            var annotation = MKPointAnnotation()
+            annotation.coordinate = touchCoordinate
+            annotation.title = "Add Reminder"
+            
+            self.mapView.addAnnotation(annotation)
+        }
     }
 
     func mapView(mapView: MKMapView!, viewForAnnotation annotation: MKAnnotation!) -> MKAnnotationView! {
@@ -64,10 +73,19 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     
     func mapView(mapView: MKMapView!, annotationView view: MKAnnotationView!, calloutAccessoryControlTapped control: UIControl!) {
         let destinationVC = self.storyboard?.instantiateViewControllerWithIdentifier("ADD_LOCATION_VC") as LocationDetailViewController
-        //destinationVC
+        destinationVC.selectedAnnotation = view.annotation
+        destinationVC.locationManager = self.locationManager
         self.presentViewController(destinationVC, animated: true) { () -> Void in
             
         }
+    }
+    
+    func locationManager(manager: CLLocationManager!, didEnterRegion region: CLRegion!) {
+        println("Entered Region!")
+    }
+    
+    func locationManager(manager: CLLocationManager!, didExitRegion region: CLRegion!) {
+        println("Exited Region!")
     }
     
     /*

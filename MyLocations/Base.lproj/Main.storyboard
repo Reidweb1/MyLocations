@@ -90,13 +90,33 @@
                                     <action selector="addLocationButtonPressed:" destination="Q3U-cj-3HA" eventType="touchUpInside" id="Vrk-ES-wZS"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1c3-1c-EzC">
+                                <rect key="frame" x="16" y="58" width="76" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Longitude: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9hz-7j-Blf">
+                                <rect key="frame" x="16" y="87" width="87" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="9hz-7j-Blf" firstAttribute="top" secondItem="1c3-1c-EzC" secondAttribute="bottom" constant="8" id="1eb-oT-FU4"/>
+                            <constraint firstItem="9hz-7j-Blf" firstAttribute="leading" secondItem="zD4-fm-hhH" secondAttribute="leadingMargin" id="7ro-QK-Pge"/>
+                            <constraint firstItem="1c3-1c-EzC" firstAttribute="top" secondItem="QXn-fg-qmn" secondAttribute="bottom" constant="8" id="9Ud-ju-cMn"/>
                             <constraint firstItem="QXn-fg-qmn" firstAttribute="leading" secondItem="zD4-fm-hhH" secondAttribute="leadingMargin" id="G4z-LJ-XQc"/>
+                            <constraint firstItem="1c3-1c-EzC" firstAttribute="leading" secondItem="zD4-fm-hhH" secondAttribute="leadingMargin" id="hOu-gO-7DW"/>
                             <constraint firstItem="QXn-fg-qmn" firstAttribute="top" secondItem="RzV-Oe-EOZ" secondAttribute="bottom" id="xRe-zC-DsB"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="locationLabel" destination="1c3-1c-EzC" id="n0h-V0-wZw"/>
+                        <outlet property="longitudeLabel" destination="9hz-7j-Blf" id="izZ-uh-pTw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LrP-an-AzG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

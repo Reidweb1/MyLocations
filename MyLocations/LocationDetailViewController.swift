@@ -12,11 +12,16 @@ import CoreLocation
 
 class LocationDetailViewController: UIViewController {
 
+    @IBOutlet weak var locationLabel: UILabel!
+    @IBOutlet weak var longitudeLabel: UILabel!
     var selectedAnnotation: MKAnnotation!
+    var locationManager: CLLocationManager!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.locationLabel.text = "Latitude: \(self.selectedAnnotation.coordinate.latitude)"
+        self.longitudeLabel.text = "Longitude: \(self.selectedAnnotation.coordinate.longitude)"
         // Do any additional setup after loading the view.
     }
 
@@ -26,7 +31,11 @@ class LocationDetailViewController: UIViewController {
     }
     
     @IBAction func addLocationButtonPressed(sender: AnyObject) {
-        
+        var geoFence = CLCircularRegion(center: self.selectedAnnotation.coordinate, radius: 100.0, identifier: "New Location")
+        self.locationManager.startMonitoringForRegion(geoFence)
+        self.dismissViewControllerAnimated(true, completion: { () -> Void in
+            // Save Location to Core Data
+        })
     }
 
     /*
