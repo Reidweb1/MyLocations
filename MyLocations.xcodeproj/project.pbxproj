@@ -16,6 +16,7 @@
 		284DD2621A08110600457DC8 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 284DD2611A08110600457DC8 /* MapKit.framework */; };
 		284DD2641A08112100457DC8 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284DD2631A08112100457DC8 /* MapViewController.swift */; };
 		284DD2661A08113000457DC8 /* LocationListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284DD2651A08113000457DC8 /* LocationListViewController.swift */; };
+		284DD2681A081C2800457DC8 /* LocationDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284DD2671A081C2800457DC8 /* LocationDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,7 @@
 		284DD2611A08110600457DC8 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		284DD2631A08112100457DC8 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		284DD2651A08113000457DC8 /* LocationListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationListViewController.swift; sourceTree = "<group>"; };
+		284DD2671A081C2800457DC8 /* LocationDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 				284DD23E1A0810BE00457DC8 /* AppDelegate.swift */,
 				284DD2631A08112100457DC8 /* MapViewController.swift */,
 				284DD2651A08113000457DC8 /* LocationListViewController.swift */,
+				284DD2671A081C2800457DC8 /* LocationDetailViewController.swift */,
 				284DD2451A0810BE00457DC8 /* Main.storyboard */,
 				284DD2481A0810BE00457DC8 /* Images.xcassets */,
 				284DD24A1A0810BE00457DC8 /* LaunchScreen.xib */,
@@ -231,6 +234,7 @@
 				284DD2641A08112100457DC8 /* MapViewController.swift in Sources */,
 				284DD2661A08113000457DC8 /* LocationListViewController.swift in Sources */,
 				284DD23F1A0810BE00457DC8 /* AppDelegate.swift in Sources */,
+				284DD2681A081C2800457DC8 /* LocationDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -62,6 +62,14 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         return annotationView
     }
     
+    func mapView(mapView: MKMapView!, annotationView view: MKAnnotationView!, calloutAccessoryControlTapped control: UIControl!) {
+        let destinationVC = self.storyboard?.instantiateViewControllerWithIdentifier("ADD_LOCATION_VC") as LocationDetailViewController
+        //destinationVC
+        self.presentViewController(destinationVC, animated: true) { () -> Void in
+            
+        }
+    }
+    
     /*
     // MARK: - Navigation
 

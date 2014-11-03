@@ -69,6 +69,39 @@
             </objects>
             <point key="canvasLocation" x="859" y="-1"/>
         </scene>
+        <!--Location Detail View Controller-->
+        <scene sceneID="6oN-Hz-44E">
+            <objects>
+                <viewController storyboardIdentifier="ADD_LOCATION_VC" id="Q3U-cj-3HA" customClass="LocationDetailViewController" customModule="MyLocations" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="RzV-Oe-EOZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="lFc-KU-cXf"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="zD4-fm-hhH">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QXn-fg-qmn">
+                                <rect key="frame" x="16" y="20" width="92" height="30"/>
+                                <state key="normal" title="Add Location">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="addLocationButtonPressed:" destination="Q3U-cj-3HA" eventType="touchUpInside" id="Vrk-ES-wZS"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="QXn-fg-qmn" firstAttribute="leading" secondItem="zD4-fm-hhH" secondAttribute="leadingMargin" id="G4z-LJ-XQc"/>
+                            <constraint firstItem="QXn-fg-qmn" firstAttribute="top" secondItem="RzV-Oe-EOZ" secondAttribute="bottom" id="xRe-zC-DsB"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LrP-an-AzG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1494" y="-1"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="8ci-Q2-tIw">
             <objects>
