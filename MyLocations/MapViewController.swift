@@ -86,6 +86,14 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         }
     }
     
+    func mapView(mapView: MKMapView!, rendererForOverlay overlay: MKOverlay!) -> MKOverlayRenderer! {
+        let renderer = MKCircleRenderer(overlay: overlay)
+        renderer.fillColor = UIColor.blueColor().colorWithAlphaComponent(0.20)
+        renderer.strokeColor = UIColor.blueColor()
+        renderer.lineWidth = 1.0
+        return renderer
+    }
+    
     func locationManager(manager: CLLocationManager!, didEnterRegion region: CLRegion!) {
         println("Entered Region!")
     }
@@ -96,7 +104,11 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     
     func reminderAdded(notification: NSNotification) {
         println("Recieved Notification")
-        // var geoFence = notification.userInfo!
+        var userInfo = notification.userInfo
+        let newRegion = userInfo!["region"] as CLCircularRegion
+        
+        let overlay = MKCircle(centerCoordinate: newRegion.center, radius: newRegion.radius)
+        self.mapView.addOverlay(overlay)
     }
     
     /*
