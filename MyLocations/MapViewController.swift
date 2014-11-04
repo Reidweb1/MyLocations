@@ -41,7 +41,13 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             println("Default")
         }
 
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "reminderAdded:", name: "REMINDER_ADDED", object: nil)
+        
         // Do any additional setup after loading the view.
+    }
+    
+    deinit {
+        NSNotificationCenter.defaultCenter().removeObserver(self)
     }
 
     override func didReceiveMemoryWarning() {
@@ -86,6 +92,11 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     
     func locationManager(manager: CLLocationManager!, didExitRegion region: CLRegion!) {
         println("Exited Region!")
+    }
+    
+    func reminderAdded(notification: NSNotification) {
+        println("Recieved Notification")
+        // var geoFence = notification.userInfo!
     }
     
     /*
