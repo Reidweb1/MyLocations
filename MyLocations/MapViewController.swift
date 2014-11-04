@@ -104,6 +104,9 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     
     func reminderAdded(notification: NSNotification) {
         var userInfo = notification.userInfo
+        if let newName = userInfo!["name"] as? String {
+            println(newName)
+        }
         let newRegion = userInfo!["region"] as CLCircularRegion
         
         let overlay = MKCircle(centerCoordinate: newRegion.center, radius: newRegion.radius)

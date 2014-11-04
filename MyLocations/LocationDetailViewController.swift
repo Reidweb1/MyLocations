@@ -48,8 +48,9 @@ class LocationDetailViewController: UIViewController {
         locationInfo["latitude"] = self.selectedAnnotation.coordinate.latitude
         locationInfo["longitude"] = self.selectedAnnotation.coordinate.longitude
         locationInfo["radius"] = self.radiusTestField!.text
+        locationInfo["region"] = geoFence
         
-        NSNotificationCenter.defaultCenter().postNotificationName("REMINDER_ADDED", object: self, userInfo: ["region" : geoFence])
+        NSNotificationCenter.defaultCenter().postNotificationName("REMINDER_ADDED", object: self, userInfo: locationInfo)
     }
 
     /*
