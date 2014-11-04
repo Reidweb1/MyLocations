@@ -14,6 +14,8 @@ class LocationDetailViewController: UIViewController {
 
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var longitudeLabel: UILabel!
+    @IBOutlet weak var locationNameTextField: UITextField!
+    @IBOutlet weak var radiusTestField: UITextField!
     var selectedAnnotation: MKAnnotation!
     var locationManager: CLLocationManager!
     
@@ -36,11 +38,17 @@ class LocationDetailViewController: UIViewController {
     
     @IBAction func addLocationButtonPressed(sender: AnyObject) {
         // Enter UI Element for user to enter name for identifier
-        var geoFence = CLCircularRegion(center: self.selectedAnnotation.coordinate, radius: 100.0, identifier: "New Location")
+        var newRadius = NSString(string: self.radiusTestField!.text).doubleValue
+        var geoFence = CLCircularRegion(center: self.selectedAnnotation.coordinate, radius: newRadius, identifier: self.locationNameTextField.text)
         self.locationManager.startMonitoringForRegion(geoFence)
-        self.dismissViewControllerAnimated(true, completion: { () -> Void in
-            // Save Location to Core Data
-        })
+        self.dismissViewControllerAnimated(true, completion: nil)
+        
+        var locationInfo = [String : AnyObject]()
+        locationInfo["name"] = self.locationNameTextField!.text
+        locationInfo["latitude"] = self.selectedAnnotation.coordinate.latitude
+        locationInfo["longitude"] = self.selectedAnnotation.coordinate.longitude
+        locationInfo["radius"] = self.radiusTestField!.text
+        
         NSNotificationCenter.defaultCenter().postNotificationName("REMINDER_ADDED", object: self, userInfo: ["region" : geoFence])
     }
 

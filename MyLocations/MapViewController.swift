@@ -103,7 +103,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     }
     
     func reminderAdded(notification: NSNotification) {
-        println("Recieved Notification")
         var userInfo = notification.userInfo
         let newRegion = userInfo!["region"] as CLCircularRegion
         

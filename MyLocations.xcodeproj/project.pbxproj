@@ -17,6 +17,7 @@
 		284DD2641A08112100457DC8 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284DD2631A08112100457DC8 /* MapViewController.swift */; };
 		284DD2661A08113000457DC8 /* LocationListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284DD2651A08113000457DC8 /* LocationListViewController.swift */; };
 		284DD2681A081C2800457DC8 /* LocationDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284DD2671A081C2800457DC8 /* LocationDetailViewController.swift */; };
+		28C2AA251A0981F700C5EDAF /* Reminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C2AA241A0981F700C5EDAF /* Reminder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		284DD2631A08112100457DC8 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		284DD2651A08113000457DC8 /* LocationListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationListViewController.swift; sourceTree = "<group>"; };
 		284DD2671A081C2800457DC8 /* LocationDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationDetailViewController.swift; sourceTree = "<group>"; };
+		28C2AA241A0981F700C5EDAF /* Reminder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reminder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +97,7 @@
 				284DD2481A0810BE00457DC8 /* Images.xcassets */,
 				284DD24A1A0810BE00457DC8 /* LaunchScreen.xib */,
 				284DD2401A0810BE00457DC8 /* MyLocations.xcdatamodeld */,
+				28C2AA241A0981F700C5EDAF /* Reminder.swift */,
 				284DD23C1A0810BE00457DC8 /* Supporting Files */,
 			);
 			path = MyLocations;
@@ -233,6 +236,7 @@
 				284DD2421A0810BE00457DC8 /* MyLocations.xcdatamodeld in Sources */,
 				284DD2641A08112100457DC8 /* MapViewController.swift in Sources */,
 				284DD2661A08113000457DC8 /* LocationListViewController.swift in Sources */,
+				28C2AA251A0981F700C5EDAF /* Reminder.swift in Sources */,
 				284DD23F1A0810BE00457DC8 /* AppDelegate.swift in Sources */,
 				284DD2681A081C2800457DC8 /* LocationDetailViewController.swift in Sources */,
 			);
@@ -359,9 +363,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = MyLocations/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MyLocations/MyLocations-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -369,9 +376,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = MyLocations/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MyLocations/MyLocations-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -428,6 +437,7 @@
 				284DD25D1A0810BE00457DC8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		284DD25E1A0810BE00457DC8 /* Build configuration list for PBXNativeTarget "MyLocationsTests" */ = {
 			isa = XCConfigurationList;
@@ -436,6 +446,7 @@
 				284DD2601A0810BE00457DC8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
