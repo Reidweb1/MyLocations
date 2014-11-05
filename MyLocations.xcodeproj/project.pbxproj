@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		282762B51A0AA38E000A8DB9 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 282762B41A0AA38E000A8DB9 /* CloudKit.framework */; };
+		283F2A9A1A0AE36D00DBE1E5 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283F2A991A0AE36D00DBE1E5 /* StringExtension.swift */; };
 		284DD23F1A0810BE00457DC8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284DD23E1A0810BE00457DC8 /* AppDelegate.swift */; };
 		284DD2421A0810BE00457DC8 /* MyLocations.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 284DD2401A0810BE00457DC8 /* MyLocations.xcdatamodeld */; };
 		284DD2471A0810BE00457DC8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 284DD2451A0810BE00457DC8 /* Main.storyboard */; };
@@ -34,6 +35,7 @@
 /* Begin PBXFileReference section */
 		282762B31A0AA368000A8DB9 /* MyLocations.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = MyLocations.entitlements; sourceTree = "<group>"; };
 		282762B41A0AA38E000A8DB9 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		283F2A991A0AE36D00DBE1E5 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		284DD2391A0810BE00457DC8 /* MyLocations.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyLocations.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		284DD23D1A0810BE00457DC8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		284DD23E1A0810BE00457DC8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				284DD23D1A0810BE00457DC8 /* Info.plist */,
+				283F2A991A0AE36D00DBE1E5 /* StringExtension.swift */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -244,6 +247,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				284DD2421A0810BE00457DC8 /* MyLocations.xcdatamodeld in Sources */,
+				283F2A9A1A0AE36D00DBE1E5 /* StringExtension.swift in Sources */,
 				284DD2641A08112100457DC8 /* MapViewController.swift in Sources */,
 				284DD2661A08113000457DC8 /* LocationListViewController.swift in Sources */,
 				28C2AA251A0981F700C5EDAF /* Reminder.swift in Sources */,

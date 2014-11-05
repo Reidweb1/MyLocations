@@ -43,7 +43,14 @@ class LocationDetailViewController: UIViewController {
     
     @IBAction func addLocationButtonPressed(sender: AnyObject) {
         // Enter UI Element for user to enter name for identifier
-        var newRadius = NSString(string: self.radiusTestField!.text).doubleValue
+        var newRadius: Double!
+        if self.radiusTestField.text.validate() {
+            println("text validated")
+            newRadius = NSString(string: self.radiusTestField!.text).doubleValue
+        } else {
+            println("defaul to 100m radius")
+            newRadius = 100
+        }
         var geoFence = CLCircularRegion(center: self.selectedAnnotation.coordinate, radius: newRadius, identifier: self.locationNameTextField.text)
         self.locationManager.startMonitoringForRegion(geoFence)
         
