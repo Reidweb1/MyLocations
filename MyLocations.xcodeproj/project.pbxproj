@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		282762B51A0AA38E000A8DB9 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 282762B41A0AA38E000A8DB9 /* CloudKit.framework */; };
 		284DD23F1A0810BE00457DC8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284DD23E1A0810BE00457DC8 /* AppDelegate.swift */; };
 		284DD2421A0810BE00457DC8 /* MyLocations.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 284DD2401A0810BE00457DC8 /* MyLocations.xcdatamodeld */; };
 		284DD2471A0810BE00457DC8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 284DD2451A0810BE00457DC8 /* Main.storyboard */; };
@@ -31,6 +32,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		282762B31A0AA368000A8DB9 /* MyLocations.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = MyLocations.entitlements; sourceTree = "<group>"; };
+		282762B41A0AA38E000A8DB9 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		284DD2391A0810BE00457DC8 /* MyLocations.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyLocations.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		284DD23D1A0810BE00457DC8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		284DD23E1A0810BE00457DC8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -54,6 +57,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				284DD2621A08110600457DC8 /* MapKit.framework in Frameworks */,
+				282762B51A0AA38E000A8DB9 /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,6 +74,7 @@
 		284DD2301A0810BE00457DC8 = {
 			isa = PBXGroup;
 			children = (
+				282762B41A0AA38E000A8DB9 /* CloudKit.framework */,
 				284DD2611A08110600457DC8 /* MapKit.framework */,
 				284DD23B1A0810BE00457DC8 /* MyLocations */,
 				284DD2541A0810BE00457DC8 /* MyLocationsTests */,
@@ -89,6 +94,7 @@
 		284DD23B1A0810BE00457DC8 /* MyLocations */ = {
 			isa = PBXGroup;
 			children = (
+				282762B31A0AA368000A8DB9 /* MyLocations.entitlements */,
 				284DD23E1A0810BE00457DC8 /* AppDelegate.swift */,
 				284DD2631A08112100457DC8 /* MapViewController.swift */,
 				284DD2651A08113000457DC8 /* LocationListViewController.swift */,
@@ -177,8 +183,12 @@
 				TargetAttributes = {
 					284DD2381A0810BE00457DC8 = {
 						CreatedOnToolsVersion = 6.1;
+						DevelopmentTeam = WHKMH85L4X;
 						SystemCapabilities = {
 							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+							com.apple.iCloud = {
 								enabled = 1;
 							};
 						};
@@ -314,7 +324,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -351,7 +361,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -364,11 +374,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = MyLocations/MyLocations.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = MyLocations/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "MyLocations/MyLocations-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -377,10 +392,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = MyLocations/MyLocations.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = MyLocations/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "MyLocations/MyLocations-Bridging-Header.h";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

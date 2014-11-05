@@ -9,6 +9,7 @@
 import UIKit
 import MapKit
 import CoreLocation
+import CoreData
 
 class LocationDetailViewController: UIViewController {
 
@@ -18,9 +19,13 @@ class LocationDetailViewController: UIViewController {
     @IBOutlet weak var radiusTestField: UITextField!
     var selectedAnnotation: MKAnnotation!
     var locationManager: CLLocationManager!
+    var managedObjectContext: NSManagedObjectContext!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
+        self.managedObjectContext = appDelegate.managedObjectContext
 
         self.locationLabel.text = "Latitude: \(self.selectedAnnotation.coordinate.latitude)"
         self.longitudeLabel.text = "Longitude: \(self.selectedAnnotation.coordinate.longitude)"
@@ -41,6 +46,22 @@ class LocationDetailViewController: UIViewController {
         var newRadius = NSString(string: self.radiusTestField!.text).doubleValue
         var geoFence = CLCircularRegion(center: self.selectedAnnotation.coordinate, radius: newRadius, identifier: self.locationNameTextField.text)
         self.locationManager.startMonitoringForRegion(geoFence)
+        
+        var newReminder = NSEntityDescription.insertNewObjectForEntityForName("Reminder", inManagedObjectContext: self.managedObjectContext) as Reminder
+        newReminder.name = self.locationNameTextField!.text
+        newReminder.latitude = self.selectedAnnotation.coordinate.latitude
+        newReminder.longitude = self.selectedAnnotation.coordinate.longitude
+        newReminder.date = NSDate()
+        newReminder.radius = newRadius
+        var error: NSError?
+        self.managedObjectContext.save(&error)
+        
+        if error != nil {
+            println(error?.localizedDescription)
+        } else {
+            println(newReminder.name + " saved")
+        }
+        
         self.dismissViewControllerAnimated(true, completion: nil)
         
         var locationInfo = [String : AnyObject]()
