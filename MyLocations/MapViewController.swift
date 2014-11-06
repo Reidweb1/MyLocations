@@ -96,17 +96,24 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     
     func locationManager(manager: CLLocationManager!, didEnterRegion region: CLRegion!) {
         println("Entered Region!")
+        var localNotification = UILocalNotification()
+        localNotification.alertAction = "TEST"
+        localNotification.alertBody = "TESTING"
+        localNotification.fireDate = NSDate()
+        UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
     }
     
     func locationManager(manager: CLLocationManager!, didExitRegion region: CLRegion!) {
         println("Exited Region!")
+        var localNotification = UILocalNotification()
+        localNotification.alertAction = "TEST"
+        localNotification.alertBody = "TESTING"
+        localNotification.fireDate = NSDate()
+        UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
     }
     
     func reminderAdded(notification: NSNotification) {
         var userInfo = notification.userInfo
-        if let newName = userInfo!["name"] as? String {
-            println(newName)
-        }
         let newRegion = userInfo!["region"] as CLCircularRegion
         
         let overlay = MKCircle(centerCoordinate: newRegion.center, radius: newRegion.radius)

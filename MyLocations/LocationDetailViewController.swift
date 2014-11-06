@@ -30,9 +30,6 @@ class LocationDetailViewController: UIViewController {
         self.locationLabel.text = "Latitude: \(self.selectedAnnotation.coordinate.latitude)"
         self.longitudeLabel.text = "Longitude: \(self.selectedAnnotation.coordinate.longitude)"
         
-        println(self.selectedAnnotation.coordinate.latitude)
-        println(self.selectedAnnotation.coordinate.longitude)
-        
         // Do any additional setup after loading the view.
     }
 

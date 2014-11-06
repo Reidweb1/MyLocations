@@ -8,6 +8,7 @@
 
 import Foundation
 import CoreData
+import CoreLocation
 
 class Reminder: NSManagedObject {
 
@@ -17,4 +18,10 @@ class Reminder: NSManagedObject {
     @NSManaged var name: String
     @NSManaged var radius: NSNumber
 
+    func getCoordinate() -> CLLocationCoordinate2D {
+        let latitude = CLLocationDegrees(self.latitude)
+        let longitude = CLLocationDegrees(self.longitude)
+        let coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+        return coordinate
+    }
 }
