@@ -97,8 +97,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     func locationManager(manager: CLLocationManager!, didEnterRegion region: CLRegion!) {
         println("Entered Region!")
         var localNotification = UILocalNotification()
-        localNotification.alertAction = "TEST"
-        localNotification.alertBody = "TESTING"
+        localNotification.alertAction = "You Entered One Of Your Saved Regions"
+        localNotification.alertBody = "Entering Place Of Interest"
         localNotification.fireDate = NSDate()
         UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
     }
@@ -106,8 +106,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     func locationManager(manager: CLLocationManager!, didExitRegion region: CLRegion!) {
         println("Exited Region!")
         var localNotification = UILocalNotification()
-        localNotification.alertAction = "TEST"
-        localNotification.alertBody = "TESTING"
+        localNotification.alertAction = "You Exited One Of Your Saved Regions"
+        localNotification.alertBody = "Exiting Place Of Interest"
         localNotification.fireDate = NSDate()
         UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
     }

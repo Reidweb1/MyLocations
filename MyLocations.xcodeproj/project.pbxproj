@@ -19,6 +19,7 @@
 		284DD2641A08112100457DC8 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284DD2631A08112100457DC8 /* MapViewController.swift */; };
 		284DD2661A08113000457DC8 /* LocationListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284DD2651A08113000457DC8 /* LocationListViewController.swift */; };
 		284DD2681A081C2800457DC8 /* LocationDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284DD2671A081C2800457DC8 /* LocationDetailViewController.swift */; };
+		289AC26A1A0D2D8F003AB3A6 /* LocationPresentationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289AC2691A0D2D8F003AB3A6 /* LocationPresentationViewController.swift */; };
 		28C2AA251A0981F700C5EDAF /* Reminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C2AA241A0981F700C5EDAF /* Reminder.swift */; };
 /* End PBXBuildFile section */
 
@@ -50,6 +51,7 @@
 		284DD2631A08112100457DC8 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		284DD2651A08113000457DC8 /* LocationListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationListViewController.swift; sourceTree = "<group>"; };
 		284DD2671A081C2800457DC8 /* LocationDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationDetailViewController.swift; sourceTree = "<group>"; };
+		289AC2691A0D2D8F003AB3A6 /* LocationPresentationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationPresentationViewController.swift; sourceTree = "<group>"; };
 		28C2AA241A0981F700C5EDAF /* Reminder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reminder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -99,8 +101,9 @@
 				282762B31A0AA368000A8DB9 /* MyLocations.entitlements */,
 				284DD23E1A0810BE00457DC8 /* AppDelegate.swift */,
 				284DD2631A08112100457DC8 /* MapViewController.swift */,
-				284DD2651A08113000457DC8 /* LocationListViewController.swift */,
 				284DD2671A081C2800457DC8 /* LocationDetailViewController.swift */,
+				284DD2651A08113000457DC8 /* LocationListViewController.swift */,
+				289AC2691A0D2D8F003AB3A6 /* LocationPresentationViewController.swift */,
 				284DD2451A0810BE00457DC8 /* Main.storyboard */,
 				284DD2481A0810BE00457DC8 /* Images.xcassets */,
 				284DD24A1A0810BE00457DC8 /* LaunchScreen.xib */,
@@ -253,6 +256,7 @@
 				28C2AA251A0981F700C5EDAF /* Reminder.swift in Sources */,
 				284DD23F1A0810BE00457DC8 /* AppDelegate.swift in Sources */,
 				284DD2681A081C2800457DC8 /* LocationDetailViewController.swift in Sources */,
+				289AC26A1A0D2D8F003AB3A6 /* LocationPresentationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

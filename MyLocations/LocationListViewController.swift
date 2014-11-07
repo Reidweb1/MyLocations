@@ -11,20 +11,25 @@ import MapKit
 import CoreLocation
 import CoreData
 
-class LocationListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate {
+class LocationListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UINavigationControllerDelegate, NSFetchedResultsControllerDelegate {
 
     @IBOutlet weak var tableView: UITableView!
     var managedObjectContext: NSManagedObjectContext!
     var fetchedResultsController: NSFetchedResultsController!
+    let dateFormatter = NSDateFormatter()
+    var resultForSelectedCell: Reminder?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.delegate = self
         self.tableView.dataSource = self
+        self.navigationController?.delegate = self
         let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
         self.managedObjectContext = appDelegate.managedObjectContext
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "didGetCloudChanges:", name: NSPersistentStoreDidImportUbiquitousContentChangesNotification, object: appDelegate.persistentStoreCoordinator)
+        
+        self.dateFormatter.dateStyle = NSDateFormatterStyle.MediumStyle
         
         var fetchRequest = NSFetchRequest(entityName: "Reminder")
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: "date", ascending: false)]
@@ -106,6 +111,14 @@ class LocationListViewController: UIViewController, UITableViewDelegate, UITable
     func configureCell(cell: UITableViewCell, atIndexPath indexPath: NSIndexPath) {
         let object = self.fetchedResultsController.objectAtIndexPath(indexPath) as NSManagedObject
         cell.textLabel.text = object.valueForKey("timeStamp")!.description
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        self.resultForSelectedCell = self.fetchedResultsController.fetchedObjects![indexPath.row] as? Reminder
+        let presentationVC = self.storyboard?.instantiateViewControllerWithIdentifier("PRESENTATION_VC") as LocationPresentationViewController
+        presentationVC.selectedResult = self.resultForSelectedCell
+        presentationVC.dateCreated = self.dateFormatter.stringFromDate(self.resultForSelectedCell!.date)
+        self.navigationController?.pushViewController(presentationVC, animated: true)
     }
     
     /*
