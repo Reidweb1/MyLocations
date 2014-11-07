@@ -24,9 +24,4 @@ class Reminder: NSManagedObject {
         let coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
         return coordinate
     }
-    
-    func formatDate() -> String {
-        
-        return ""
-    }
 }

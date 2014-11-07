@@ -20,7 +20,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         
         self.locationManager.delegate = self
         self.mapView.delegate = self
-        
+        self.mapView.showsUserLocation = true
         let longPress = UILongPressGestureRecognizer(target: self, action: "didLongPressMap:")
         self.mapView.addGestureRecognizer(longPress)
         

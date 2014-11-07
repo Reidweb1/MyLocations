@@ -183,25 +183,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="rA9-xO-lMs">
-                                <rect key="frame" x="16" y="72" width="568" height="250"/>
+                                <rect key="frame" x="16" y="28" width="568" height="250"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="250" id="OhU-bg-Q8c"/>
                                 </constraints>
                             </mapView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DpY-dr-CgB">
-                                <rect key="frame" x="16" y="330" width="568" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="toe-v8-PYw">
-                                <rect key="frame" x="16" y="359" width="568" height="21"/>
+                                <rect key="frame" x="16" y="286" width="568" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="biq-lk-pBW">
-                                <rect key="frame" x="16" y="388" width="568" height="21"/>
+                                <rect key="frame" x="16" y="315" width="568" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -211,20 +205,16 @@
                         <constraints>
                             <constraint firstItem="rA9-xO-lMs" firstAttribute="top" secondItem="3Fa-jv-5g4" secondAttribute="bottom" constant="8" id="3ss-oq-a6H"/>
                             <constraint firstItem="DpY-dr-CgB" firstAttribute="trailing" secondItem="bYB-df-iW1" secondAttribute="trailingMargin" id="9DS-d6-L7R"/>
-                            <constraint firstItem="biq-lk-pBW" firstAttribute="top" secondItem="toe-v8-PYw" secondAttribute="bottom" constant="8" id="Bia-tq-eaE"/>
                             <constraint firstItem="DpY-dr-CgB" firstAttribute="leading" secondItem="bYB-df-iW1" secondAttribute="leadingMargin" id="CmQ-oK-MPn"/>
                             <constraint firstItem="rA9-xO-lMs" firstAttribute="trailing" secondItem="bYB-df-iW1" secondAttribute="trailingMargin" id="EdU-3S-9mF"/>
-                            <constraint firstItem="toe-v8-PYw" firstAttribute="trailing" secondItem="bYB-df-iW1" secondAttribute="trailingMargin" id="Kvl-hj-fah"/>
-                            <constraint firstItem="biq-lk-pBW" firstAttribute="leading" secondItem="bYB-df-iW1" secondAttribute="leadingMargin" id="Wi5-1s-YLy"/>
-                            <constraint firstItem="toe-v8-PYw" firstAttribute="leading" secondItem="bYB-df-iW1" secondAttribute="leadingMargin" id="ZDr-nJ-jxW"/>
                             <constraint firstItem="rA9-xO-lMs" firstAttribute="leading" secondItem="bYB-df-iW1" secondAttribute="leadingMargin" id="bed-hk-3OX"/>
+                            <constraint firstItem="biq-lk-pBW" firstAttribute="trailing" secondItem="bYB-df-iW1" secondAttribute="trailingMargin" id="enu-e5-Kgs"/>
                             <constraint firstItem="DpY-dr-CgB" firstAttribute="top" secondItem="rA9-xO-lMs" secondAttribute="bottom" constant="8" id="gOX-cP-acP"/>
-                            <constraint firstItem="toe-v8-PYw" firstAttribute="top" secondItem="DpY-dr-CgB" secondAttribute="bottom" constant="8" id="lHQ-cM-0cb"/>
-                            <constraint firstItem="biq-lk-pBW" firstAttribute="trailing" secondItem="bYB-df-iW1" secondAttribute="trailingMargin" id="mE5-aS-W29"/>
+                            <constraint firstItem="biq-lk-pBW" firstAttribute="top" secondItem="DpY-dr-CgB" secondAttribute="bottom" constant="8" id="rFF-Zz-YLu"/>
+                            <constraint firstItem="biq-lk-pBW" firstAttribute="leading" secondItem="bYB-df-iW1" secondAttribute="leadingMargin" id="xEA-hN-EzC"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="locationAddressLabel" destination="toe-v8-PYw" id="f0w-q8-f2f"/>
                         <outlet property="locationDateMadeLabel" destination="biq-lk-pBW" id="b6E-Nf-ReK"/>
                         <outlet property="locationNameLabel" destination="DpY-dr-CgB" id="Zqy-zC-Sbw"/>
                         <outlet property="mapView" destination="rA9-xO-lMs" id="LM7-K4-ReH"/>
