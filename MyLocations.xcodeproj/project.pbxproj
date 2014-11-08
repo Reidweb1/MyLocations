@@ -52,6 +52,7 @@
 		284DD2651A08113000457DC8 /* LocationListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationListViewController.swift; sourceTree = "<group>"; };
 		284DD2671A081C2800457DC8 /* LocationDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationDetailViewController.swift; sourceTree = "<group>"; };
 		289AC2691A0D2D8F003AB3A6 /* LocationPresentationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationPresentationViewController.swift; sourceTree = "<group>"; };
+		289AC26B1A0EC2D0003AB3A6 /* HashTables.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = HashTables.playground; sourceTree = "<group>"; };
 		28C2AA241A0981F700C5EDAF /* Reminder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reminder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -118,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				284DD23D1A0810BE00457DC8 /* Info.plist */,
+				289AC26B1A0EC2D0003AB3A6 /* HashTables.playground */,
 				283F2A991A0AE36D00DBE1E5 /* StringExtension.swift */,
 			);
 			name = "Supporting Files";
